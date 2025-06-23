@@ -17,18 +17,12 @@ function cargarTabla() {
           const celda = index === 0 ? document.createElement('th') : document.createElement('td');
           celda.textContent = col;
 
-          // Columna de stock (colIndex 0): angosta y centrada
           if (colIndex === 0) {
-            celda.style.textAlign = 'center';
-            celda.style.width = '60px';
-            celda.style.minWidth = '50px';
+            celda.classList.add('col-stock');
           }
 
-          // Columna de productos (colIndex 1): ancha y alineada a la izquierda
           if (colIndex === 1) {
-            celda.style.textAlign = 'left';
-            celda.style.paddingLeft = '1rem';
-            celda.style.width = '100%';
+            celda.classList.add('col-producto');
           }
 
           tr.appendChild(celda);
