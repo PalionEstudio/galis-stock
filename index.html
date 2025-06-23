@@ -5,100 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stock GALIS actualizado</title>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Rubik', sans-serif;
-      background-color: #000;
-      color: #fff;
-      text-align: center;
-    }
-    header {
-      padding: 1.5rem 1rem 0.5rem;
-    }
-    img.logo {
-      width: 100px;
-      max-width: 25vw;
-      margin-bottom: 0.5rem;
-    }
-    h1 {
-      margin: 0;
-      font-size: 2rem;
-      color: #fcd34d;
-    }
-    #update-time {
-      margin-top: 0.25rem;
-      font-size: 0.9rem;
-      color: #bbb;
-    }
-    button {
-      background-color: #facc15;
-      color: #000;
-      font-weight: bold;
-      border: none;
-      border-radius: 8px;
-      padding: 0.5rem 1rem;
-      margin: 1rem;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-    }
-    button:hover {
-      background-color: #fde047;
-    }
-    .tabla-scroll {
-      overflow-x: auto;
-      padding: 0 1rem 2rem;
-    }
-    table {
-      margin: auto;
-      width: 100%;
-      max-width: 960px;
-      border-collapse: collapse;
-      background-color: #111;
-      border-radius: 10px;
-      box-shadow: 0 0 12px #333;
-      overflow: hidden;
-      opacity: 0;
-      transform: translateY(10px);
-      animation: aparecer 0.6s ease forwards;
-    }
-    @keyframes aparecer {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    th, td {
-      padding: 10px;
-      border: 1px solid #333;
-      text-align: center;
-      font-size: 0.95rem;
-    }
-    th {
-      background-color: #222;
-      font-weight: 600;
-      color: #fcd34d;
-    }
-    tr:nth-child(even) {
-      background-color: #1a1a1a;
-    }
-    tr:hover {
-      background-color: #333;
-    }
-    #mensaje {
-      font-size: 1rem;
-      color: #ccc;
-    }
-  </style>
+  <link rel="stylesheet" href="css/estilos.css" />
 </head>
 <body>
 
   <header>
-    <img src="https://github.com/PalionEstudio/galis-stock/blob/main/img/Logo.png" class="logo" alt="Logo Galis" />
+    <img src="https://palionestudio.github.io/galis-stock/img/Logo.png" class="logo" alt="Logo Galis" />
     <h1>GALIS – Stock actualizado</h1>
     <div id="update-time">Cargando fecha...</div>
     <button onclick="cargarTabla()">🔄 Actualizar</button>
@@ -109,40 +21,6 @@
     <div id="tabla-container"></div>
   </div>
 
-  <script>
-    const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQwn7lG9BEyC6TH3WhyOELMTLmP4Vw3SvQ8Dfc05PJJfxGHMoCtQ6o8OmqP41p7Zf_3buBROcl-57ZU/pub?gid=181536988&single=true&output=csv';
-
-    function cargarTabla() {
-      document.getElementById('mensaje').textContent = 'Cargando stock...';
-      document.getElementById('tabla-container').innerHTML = '';
-      fetch(csvUrl)
-        .then(response => response.text())
-        .then(data => {
-          const filas = data.trim().split('\n').map(linea => linea.split(','));
-          const tabla = document.createElement('table');
-
-          filas.forEach((fila, index) => {
-            const tr = document.createElement('tr');
-            fila.forEach(col => {
-              const celda = index === 0 ? document.createElement('th') : document.createElement('td');
-              celda.textContent = col;
-              tr.appendChild(celda);
-            });
-            tabla.appendChild(tr);
-          });
-
-          document.getElementById('tabla-container').appendChild(tabla);
-          document.getElementById('mensaje').textContent = '';
-          document.getElementById('update-time').textContent = 'Última actualización: ' + new Date().toLocaleString();
-        })
-        .catch(err => {
-          document.getElementById('mensaje').textContent = 'Error al cargar el stock.';
-          console.error(err);
-        });
-    }
-
-    cargarTabla();
-  </script>
-
+  <script src="js/tabla.js"></script>
 </body>
 </html>
