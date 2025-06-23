@@ -12,26 +12,28 @@ function cargarTabla() {
 
       filas.forEach((fila, index) => {
         const tr = document.createElement('tr');
+
         fila.forEach((col, colIndex) => {
           const celda = index === 0 ? document.createElement('th') : document.createElement('td');
           celda.textContent = col;
 
-          // Si es la primera columna (producto): alineado a la izquierda y más ancho
+          // Columna de stock (colIndex 0): angosta y centrada
           if (colIndex === 0) {
-            celda.style.textAlign = 'left';
-            celda.style.paddingLeft = '1rem';
-            celda.style.width = '85%';
+            celda.style.textAlign = 'center';
+            celda.style.width = '60px';
+            celda.style.minWidth = '50px';
           }
 
-          // Si es la última columna (stock): bien angosta
-          if (colIndex === fila.length - 1) {
-            celda.style.textAlign = 'center';
-            celda.style.width = '15%';
-            celda.style.minWidth = '50px';
+          // Columna de productos (colIndex 1): ancha y alineada a la izquierda
+          if (colIndex === 1) {
+            celda.style.textAlign = 'left';
+            celda.style.paddingLeft = '1rem';
+            celda.style.width = '100%';
           }
 
           tr.appendChild(celda);
         });
+
         tabla.appendChild(tr);
       });
 
