@@ -134,3 +134,30 @@ td.col-producto, th.col-producto {
 .amarillo {
   background-color: #facc15;
 }
+
+h1 {
+  font-size: 1.2rem;
+}
+
+button {
+  background-color: transparent;
+  color: #fff;
+  font-weight: 500;
+  border: 1px solid #fff;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  margin: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.refresh-icon {
+  font-size: 1rem;
+  margin-right: 0.3rem;
+}
