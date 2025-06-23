@@ -16,15 +16,18 @@ function cargarTabla() {
           const celda = index === 0 ? document.createElement('th') : document.createElement('td');
           celda.textContent = col;
 
+          // Si es la primera columna (producto): alineado a la izquierda y más ancho
           if (colIndex === 0) {
             celda.style.textAlign = 'left';
             celda.style.paddingLeft = '1rem';
-            celda.style.width = '70%';
+            celda.style.width = '85%';
           }
 
+          // Si es la última columna (stock): bien angosta
           if (colIndex === fila.length - 1) {
-            celda.style.width = '30px';
             celda.style.textAlign = 'center';
+            celda.style.width = '15%';
+            celda.style.minWidth = '50px';
           }
 
           tr.appendChild(celda);
