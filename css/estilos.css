@@ -16,15 +16,15 @@ header {
 }
 
 img.logo {
-  width: 100px;
-  max-width: 25vw;
+  width: 300px;
+  max-width: 75vw;
   margin-bottom: 0.5rem;
 }
 
 h1 {
   margin: 0;
   font-size: 2rem;
-  color: #fcd34d;
+  color: #f472b6;
 }
 
 #update-time {
@@ -34,7 +34,7 @@ h1 {
 }
 
 button {
-  background-color: #facc15;
+  background-color: #f472b6;
   color: #000;
   font-weight: bold;
   border: none;
@@ -46,7 +46,7 @@ button {
 }
 
 button:hover {
-  background-color: #fde047;
+  background-color: #fb7185;
 }
 
 .tabla-scroll {
@@ -57,7 +57,7 @@ button:hover {
 table {
   margin: auto;
   width: 100%;
-  max-width: 960px;
+  max-width: 680px;
   border-collapse: collapse;
   background-color: #111;
   border-radius: 10px;
@@ -85,7 +85,7 @@ th, td {
 th {
   background-color: #222;
   font-weight: 600;
-  color: #fcd34d;
+  color: #f472b6;
 }
 
 tr:nth-child(even) {
@@ -111,4 +111,26 @@ td.col-producto, th.col-producto {
   text-align: left;
   padding-left: 1rem;
   width: 100%;
+}
+
+.leyenda {
+  margin: 0.5rem auto 1rem;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.indicador {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin: 0 6px;
+  border-radius: 50%;
+}
+
+.verde {
+  background-color: #22c55e;
+}
+
+.amarillo {
+  background-color: #facc15;
 }

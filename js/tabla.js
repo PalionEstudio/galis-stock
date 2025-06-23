@@ -15,14 +15,29 @@ function cargarTabla() {
 
         fila.forEach((col, colIndex) => {
           const celda = index === 0 ? document.createElement('th') : document.createElement('td');
-          celda.textContent = col;
 
+          // Columna stock
           if (colIndex === 0) {
             celda.classList.add('col-stock');
+            if (index !== 0) {
+              const valor = parseInt(col);
+              if (isNaN(valor)) {
+                celda.textContent = '';
+              } else if (valor > 5) {
+                celda.innerHTML = '<span class="indicador verde"></span>';
+              } else {
+                celda.textContent = valor;
+                celda.style.color = '#facc15';
+              }
+            } else {
+              celda.textContent = col;
+            }
           }
 
+          // Columna producto
           if (colIndex === 1) {
             celda.classList.add('col-producto');
+            celda.textContent = col;
           }
 
           tr.appendChild(celda);
