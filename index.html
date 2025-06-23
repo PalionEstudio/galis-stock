@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock GALIS</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #f0f0f0;
+      font-family: sans-serif;
+      padding: 1rem;
+      text-align: center;
+    }
+    table {
+      margin: auto;
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 960px;
+      background-color: #111;
+    }
+    th, td {
+      border: 1px solid #444;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #222;
+    }
+    tr:nth-child(even) {
+      background-color: #1a1a1a;
+    }
+  </style>
+</head>
+<body>
+  <h2>📦 Stock actualizado de GALIS</h2>
+  <p id="mensaje">Cargando...</p>
+  <div id="tabla-container"></div>
+
+  <script>
+    const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQwn7lG9BEyC6TH3WhyOELMTLmP4Vw3SvQ8Dfc05PJJfxGHMoCtQ6o8OmqP41p7Zf_3buBROcl-57ZU/pub?gid=181536988&single=true&output=csv'; // <--- pegá acá tu URL CSV
+
+    fetch(csvUrl)
+      .then(response => response.text())
+      .then(data => {
+        const filas = data.trim().split('\n').map(linea => linea.split(','));
+        const tabla = document.createElement('table');
+
+        filas.forEach((fila, index) => {
+          const tr = document.createElement('tr');
+          fila.forEach(col => {
+            const celda = index === 0 ? document.createElement('th') : document.createElement('td');
+            celda.textContent = col;
+            tr.appendChild(celda);
+          });
+          tabla.appendChild(tr);
+        });
+
+        document.getElementById('tabla-container').appendChild(tabla);
+        document.getElementById('mensaje').style.display = 'none';
+      })
+      .catch(err => {
+        document.getElementById('mensaje').textContent = 'Error al cargar el stock.';
+        console.error(err);
+      });
+  </script>
+</body>
+</html>
