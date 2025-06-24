@@ -8,33 +8,41 @@ function cargarTabla() {
     .then(response => response.text())
     .then(data => {
       const filas = data.trim().split('\n').map(linea => linea.split(','));
+      const headers = filas[0];
+      let productos = filas.slice(1);
+
+      // Filtrar por cantidad >= 5
+      productos = productos.filter(f => parseInt(f[0]) >= 5);
+
+      // Ordenar por nombre (columna 1)
+      productos.sort((a, b) => a[1].localeCompare(b[1]));
+
+      // Volver a incluir el encabezado
+      const todas = [headers, ...productos];
+
+      // Crear tabla
       const tabla = document.createElement('table');
 
-      filas.forEach((fila, index) => {
+      todas.forEach((fila, index) => {
         const tr = document.createElement('tr');
 
         fila.forEach((col, colIndex) => {
           const celda = index === 0 ? document.createElement('th') : document.createElement('td');
 
-          // Columna stock
           if (colIndex === 0) {
             celda.classList.add('col-stock');
-            if (index !== 0) {
-              const valor = parseInt(col);
-              if (isNaN(valor)) {
-                celda.textContent = '';
-              } else if (valor > 5) {
-                celda.innerHTML = '<span class="indicador verde"></span>';
-              } else {
-                celda.textContent = valor;
-                celda.style.color = '#facc15';
-              }
-            } else {
+            if (index === 0) {
               celda.textContent = col;
+            } else {
+              const valor = parseInt(col);
+              if (valor >= 5) {
+                const circulo = document.createElement('span');
+                circulo.className = 'indicador verde';
+                celda.appendChild(circulo);
+              }
             }
           }
 
-          // Columna producto
           if (colIndex === 1) {
             celda.classList.add('col-producto');
             celda.textContent = col;
