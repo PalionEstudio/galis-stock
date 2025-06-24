@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik', sans-serif;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+}
+
+header {
+  padding: 1.5rem 1rem 0.5rem;
+}
+
+img.logo {
+  width: 300px;
+  max-width: 75vw;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #f472b6;
+}
+
+#update-time {
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+button {
+  background-color: transparent;
+  color: #fff;
+  font-weight: 500;
+  border: 1px solid #fff;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  margin: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.refresh-icon {
+  font-size: 1rem;
+  margin-right: 0.3rem;
+}
+
+.tabla-scroll {
+  overflow-x: auto;
+  padding: 0 1rem 2rem;
+}
+
+table {
+  margin: auto;
+  width: 100%;
+  max-width: 680px;
+  border-collapse: collapse;
+  background-color: #111;
+  border-radius: 10px;
+  box-shadow: 0 0 12px #333;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: aparecer 0.6s ease forwards;
+}
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #333;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+th {
+  background-color: #222;
+  font-weight: 600;
+  color: #f472b6;
+}
+
+tr:nth-child(even) {
+  background-color: #1a1a1a;
+}
+
+tr:hover {
+  background-color: #333;
+}
+
+#mensaje {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+td.col-stock, th.col-stock {
+  width: 60px;
+  min-width: 50px;
+  text-align: center;
+}
+
+td.col-producto, th.col-producto {
+  text-align: left;
+  padding-left: 1rem;
+  width: 100%;
+}
+
+.leyenda {
+  margin: 0.5rem auto 1rem;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.indicador {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin: 0 6px;
+  border-radius: 50%;
+}
+
+.amarillo {
+  background-color: #facc15;
+}
