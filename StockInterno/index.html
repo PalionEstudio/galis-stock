@@ -13,6 +13,12 @@
     <img src="https://palionestudio.github.io/galis-stock/img/Logo.png" class="logo" alt="Logo Galis" />
     <h1>Stock interno – cantidades reales</h1>
     <div id="update-time">Cargando fecha...</div>
+    <div class="ordenadores">
+      <button onclick="ordenar('cantidad', 'asc')">Ordenar por cantidad A-Z</button>
+      <button onclick="ordenar('cantidad', 'desc')">Ordenar por cantidad Z-A</button>
+      <button onclick="ordenar('nombre', 'asc')">Ordenar por nombre A-Z</button>
+      <button onclick="ordenar('nombre', 'desc')">Ordenar por nombre Z-A</button>
+    </div>
     <button onclick="cargarTabla()"><span class="refresh-icon">⟳</span> Actualizar</button>
   </header>
 
