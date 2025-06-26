@@ -50,7 +50,7 @@ function cargarTabla() {
 
           if (colIndex === 2) {
             celda.classList.add('col-valor');
-            celda.textContent = index === 0 ? col : `$${parseFloat(col).toFixed(2)}`;
+            celda.textContent = index === 0 ? col : `$${parseInt(col).toLocaleString('es-AR')}`;
           }
 
           tr.appendChild(celda);
