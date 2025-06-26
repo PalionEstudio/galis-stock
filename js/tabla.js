@@ -50,7 +50,13 @@ function cargarTabla() {
 
           if (colIndex === 2) {
             celda.classList.add('col-valor');
-            celda.textContent = index === 0 ? col : `$${parseInt(col).toLocaleString('es-AR')}`;
+            if (index === 0) {
+              celda.textContent = col;
+            } else {
+              const numero = parseInt(col.replace(/\D/g, '')); // eliminar cualquier símbolo no numérico
+              celda.textContent = !isNaN(numero) ? `$${numero.toLocaleString('es-AR')}` : '';
+            }
+            
           }
 
           tr.appendChild(celda);
