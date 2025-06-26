@@ -12,7 +12,6 @@ body {
   text-align: center;
 }
 
-
 header {
   padding: 1.5rem 1rem 0.5rem;
 }
@@ -36,19 +35,21 @@ h1 {
 }
 
 button {
-  background-color: #f472b6;
-  color: #000;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  padding: 0.5rem 1rem;
+  background-color: transparent;
+  color: #fff;
+  font-weight: 500;
+  border: 1px solid #fff;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
   margin: 1rem;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 button:hover {
-  background-color: #fb7185;
+  background-color: #fff;
+  color: #000;
 }
 
 .tabla-scroll {
@@ -58,6 +59,7 @@ button:hover {
 
 table {
   margin: auto;
+  table-layout: auto;
   width: 100%;
   max-width: 680px;
   border-collapse: collapse;
@@ -112,7 +114,15 @@ td.col-stock, th.col-stock {
 td.col-producto, th.col-producto {
   text-align: left;
   padding-left: 1rem;
-  width: 100%;
+  white-space: nowrap;
+  width: auto;
+  max-width: 100%;
+}
+
+td.col-valor, th.col-valor {
+  text-align: right;
+  padding-right: 1rem;
+  white-space: nowrap;
 }
 
 .leyenda {
@@ -131,29 +141,6 @@ td.col-producto, th.col-producto {
 
 .verde {
   background-color: #22c55e;
-}
-
-
-h1 {
-  font-size: 1.2rem;
-}
-
-button {
-  background-color: transparent;
-  color: #fff;
-  font-weight: 500;
-  border: 1px solid #fff;
-  font-size: 0.95rem;
-  border-radius: 6px;
-  padding: 0.4rem 0.8rem;
-  margin: 1rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-button:hover {
-  background-color: #fff;
-  color: #000;
 }
 
 .refresh-icon {
