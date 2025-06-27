@@ -11,7 +11,7 @@ function cargarTabla() {
       const headers = filas[0];
       let productos = filas.slice(1);
 
-      // Filtrar por cantidad >= 5
+      // Filtrar por cantidad >= 2
       productos = productos.filter(f => parseInt(f[0]) >= 2);
 
       // Ordenar por nombre (columna 1)
@@ -35,9 +35,13 @@ function cargarTabla() {
               celda.textContent = col;
             } else {
               const valor = parseInt(col);
-              if (valor >= 5) {
+              if (valor >= 6) {
                 const circulo = document.createElement('span');
                 circulo.className = 'indicador verde';
+                celda.appendChild(circulo);
+              } else if (valor >= 2 && valor <= 5) {
+                const circulo = document.createElement('span');
+                circulo.className = 'indicador amarillo';
                 celda.appendChild(circulo);
               }
             }
@@ -53,10 +57,9 @@ function cargarTabla() {
             if (index === 0) {
               celda.textContent = col;
             } else {
-              const numero = parseInt(col.replace(/\D/g, '')); // eliminar cualquier símbolo no numérico
+              const numero = parseInt(col.replace(/\D/g, '')); // eliminar símbolos no numéricos
               celda.textContent = !isNaN(numero) ? `$${numero.toLocaleString('es-AR')}` : '';
             }
-            
           }
 
           tr.appendChild(celda);

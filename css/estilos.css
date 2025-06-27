@@ -140,6 +140,11 @@ td.col-valor, th.col-valor {
   background-color: #22c55e;
 }
 
+.amarillo {
+  background-color: #facc15;
+}
+
+
 .refresh-icon {
   font-size: 1rem;
   margin-right: 0.3rem;
