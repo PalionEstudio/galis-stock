@@ -12,7 +12,7 @@ function cargarTabla() {
       let productos = filas.slice(1);
 
       // Filtrar por cantidad >= 5
-      productos = productos.filter(f => parseInt(f[0]) >= 5);
+      productos = productos.filter(f => parseInt(f[0]) >= 2);
 
       // Ordenar por nombre (columna 1)
       productos.sort((a, b) => a[1].localeCompare(b[1]));
