@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock GALIS actualizado</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+  <div class="fondo-oscuro"></div>
+  <main>
+    <header>
+      <img src="img/Logo.png" class="logo" alt="Logo Galis" />
+      <h1>Stock actualizado de productos</h1>
+      <div id="update-time">Cargando fecha...</div>
+      <button onclick="cargarTabla()"><span class="refresh-icon">⟳</span> Actualizar</button>
+    </header>
+
+    <section class="leyenda">
+      <span class="indicador verde"></span> En stock
+      <span class="indicador amarillo"></span> Stock bajo
+    </section>
+    
+
+    <p id="mensaje">Cargando stock...</p>
+    <div class="tabla-scroll">
+      <div id="tabla-container"></div>
+    </div>
+  </main>
+
+  <script src="js/tabla.js"></script>
+</body>
+
+</html>

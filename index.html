@@ -3,33 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stock GALIS actualizado</title>
+  <title>GALIS - Próxima tanda en camino</title>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/estilos.css" />
+  <style>
+    .mensaje-central {
+      max-width: 600px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      box-shadow: 0 0 12px #00000055;
+    }
+
+    .mensaje-central h2 {
+      font-size: 1.8rem;
+      color: #f472b6;
+      margin-bottom: 1rem;
+    }
+
+    .mensaje-central p {
+      font-size: 1.1rem;
+      color: #ddd;
+      line-height: 1.6;
+    }
+
+    .mensaje-central span {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 2rem;
+    }
+  </style>
 </head>
 <body>
   <div class="fondo-oscuro"></div>
   <main>
     <header>
       <img src="img/Logo.png" class="logo" alt="Logo Galis" />
-      <h1>Stock actualizado de productos</h1>
-      <div id="update-time">Cargando fecha...</div>
-      <button onclick="cargarTabla()"><span class="refresh-icon">⟳</span> Actualizar</button>
+      <h1>¡Gracias por visitarnos!</h1>
     </header>
 
-    <section class="leyenda">
-      <span class="indicador verde"></span> En stock
-      <span class="indicador amarillo"></span> Stock bajo
-    </section>
-    
-
-    <p id="mensaje">Cargando stock...</p>
-    <div class="tabla-scroll">
-      <div id="tabla-container"></div>
+    <div class="mensaje-central">
+      <h2>Estamos preparando una nueva tanda deliciosa 🍪</h2>
+      <p>
+        En este momento estamos reponiendo stock y preparando muchas cosas ricas.<br />
+        Muy pronto vas a poder ver nuevamente el listado actualizado.
+      </p>
+      <p>
+        Mantenete atento a nuestro grupo de WhatsApp para ver las novedades y consultarnos sobre productos disponibles 😊
+      </p>
+      <span>🛠️💗</span>
     </div>
   </main>
-
-  <script src="js/tabla.js"></script>
 </body>
-
 </html>
